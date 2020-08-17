@@ -1,9 +1,12 @@
-create directory structure
-create a npm project and install all dependencies
+**create directory structure
+**create a npm project and install all dependencies
 .........dependencies
 ..........express
 ..........ejs express-ejs-layouts
 -Dev dependencies
 ...-nodemon
 
-create express server - create a server.js file
+**create express server - create a server.js file
+**git setup and first commit
+**install laravel mix
+--set js and scss
