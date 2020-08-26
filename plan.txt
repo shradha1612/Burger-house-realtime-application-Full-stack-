@@ -10,3 +10,36 @@
 **git setup and first commit
 **install laravel mix
 --set js and scss
+
+Install tailwind css
+create home page using html and css
+create cart page-order summary
+empty cart section
+
+
+move routes to routes files
+create dedicated controllers
+
+
+add to cart functionality
+4hlk84CJ0J37KTPW
+mongodb+srv://dbshradha1612:<password>@cluster0.nut94.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+fetch all pizza from db and show on home page
+create menu model and put dummy data
+connect to mongo db
+use connect-mongo from session store
+dependencies
+mongoose, express-session, connect mongo dotenv
+axios to send ajax request
+
+install notification library npm i noty https://ned.im/noty/#/
+
+create login page  with routes
+
+create register page with routes
+ build register crud 
+ -----dependencies express-flash express-session dotenv
+ -----sttus code article  https://www.restapitutorial.com/httpstatuscodes.html
+
+ Build login using passport passport-local express-session
