@@ -9,7 +9,7 @@ const mongoose= require('mongoose')
 const session = require('express-session')
 const flash= require('express-flash')
 const MongoDbStore = require('connect-mongo')(session)     //call  and pass session
-
+const passport = require('passport')
 
 
 //Database connection
@@ -21,6 +21,8 @@ connection.once('open', ()=>{
 }) .catch(err=>{
     console.log('connection failed')
 })
+
+
 
 
 //session store
@@ -40,20 +42,30 @@ app.use(session({
    cookie: {maxAge: 1000 * 60 *60 *24}   //session valid for 24 hour 
 }))
 
+//passport ka confuig should be after session conf
+//passport config
+const passportInit= require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.use(flash())
+//Assets
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 
-//Global Middleware
+//Global Middleware   
 app.use((req, res, next)=>{
-    res.locals.session = req.session
+    res.locals.session = req.session   //due to this session is available on our front end
+    res.locals.user = req.user
     next()
 
 })
 
-//Assets
-app.use(express.static('public'))
+
 
 
 //set template engine

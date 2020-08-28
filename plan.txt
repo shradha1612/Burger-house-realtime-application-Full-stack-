@@ -42,4 +42,10 @@ create register page with routes
  -----dependencies express-flash express-session dotenv
  -----sttus code article  https://www.restapitutorial.com/httpstatuscodes.html
 
- Build login using passport passport-local express-session
+ Build login using passport
+ -install dependancies passport  passport-local express-session
+
+ Create Order controller and link it in server.js
+
+ Create Order view with table for customer and admin
+ 
