@@ -48,4 +48,12 @@ create register page with routes
  Create Order controller and link it in server.js
 
  Create Order view with table for customer and admin
- 
+ place order functionalityshow all my orders
+ show order on admin page
+
+
+
+
+ create order ingle page with status
+ order tracker
+    -dependencies
