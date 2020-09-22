@@ -6,7 +6,7 @@ function homeController() {
        async index(req,res){ 
 
             const burgers=await Menu.find()
-            console.log(burgers)
+            //console.log(burgers)
            return res.render('home',{burgers:burgers })
 
 //-------------------to same task can be done by below code .........i have preferred async and awaut method (above)
