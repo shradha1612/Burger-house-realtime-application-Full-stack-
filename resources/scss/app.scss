@@ -1,7 +1,6 @@
 @import './variables';
 @import '~noty/src/noty.scss';
 @import '~noty/src/themes/mint.scss';
-
 body {
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -27,7 +26,8 @@ nav li a {
 }
 
 section.hero {
-    background:$secondary;
+    // background:$secondary;
+    background:Black;
 }
 
 .size {
@@ -46,7 +46,6 @@ section.hero {
         outline: none;
     }
 }
-
 .btn-primary{
     background: $primary;
     transition: $smooth;
@@ -55,14 +54,12 @@ section.hero {
 
     }
 }
-
 section.cart {
     background: $secondary;
     .amount {
         color:$primary
     }
 }
-
 section.login {
     background: $secondary;
     min-height: calc(100vh -86px);
@@ -77,15 +74,12 @@ section.login {
     border-radius: 50px !important;
     padding-left: 8px !important;
 }
-
 a.link {
     color:$primary;
 }
-
 section.status {
     background: $secondary;
     min-height:calc(100vh - 86px); 
-
 }
 .status-box {
     padding:60px 0 0;
@@ -110,7 +104,6 @@ section.status {
     border-radius: 50%;
     transform: translateY(-5px);
     box-shadow: 0 0 1px 10px $secondary;
-
 }
 
 //Icons
@@ -123,12 +116,9 @@ section.status {
     top: 50%;
     transform: translateY(-50%);
     color:inherit;
-
-
 }
 .status-box ul li:nth-child(1) span:before {
     content:'\f46c';
-
 }
 .status-box ul li:nth-child(2) span:before {
     content:'\f560';
@@ -195,5 +185,20 @@ color: $primary;
     float:right;
     font-size: 14px;
     margin-top: 8px;
+}
+@media(max-width:1060px) {
+    .container {
+        max-width: 90%;
+    }
+    table {
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+}
 
+@media(max-width:768px){
+    .status-box ul li span:before {
+        font-size:34px;
+    }
 }

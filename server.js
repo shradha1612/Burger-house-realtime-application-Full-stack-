@@ -13,8 +13,11 @@ const passport = require('passport')
 const Emitter = require('events')
 
 //Database connection
-const url="mongodb+srv://dbshradha1612:4hlk84CJ0J37KTPW@cluster0.nut94.mongodb.net/Burger?retryWrites=true&w=majority"
-mongoose.connect(url, {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify:true});
+// const url="mongodb+srv://dbshradha1612:4hlk84CJ0J37KTPW@cluster0.nut94.mongodb.net/Burger?retryWrites=true&w=majority"
+// mongoose.connect(url, {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify:true});
+
+mongoose.connect(process.env.MONGO_CONNECTION_URL, {useNewUrlParser: true, 
+useCreateIndex:true, useUnifiedTopology: true, useFindAndModify:true});
 const connection= mongoose.connection;
 connection.once('open', ()=>{
     console.log('database connected');
@@ -30,7 +33,6 @@ let mongoStore = new MongoDbStore({
 //Event Emitter 
 const eventEmitter = new Emitter()
 app.set('eventEmitter', eventEmitter)
-
 
 
 //session configurations
@@ -63,7 +65,6 @@ app.use((req, res, next)=>{
     res.locals.session = req.session   //due to this session is available on our front end
     res.locals.user = req.user
     next()
-
 })
 
 //set template engine
@@ -71,9 +72,12 @@ app.use(expressLayout)
 app.set('views',path.join(__dirname,'/resources/views'))
 app.set('view engine', 'ejs')
 
-//always write routes agter template engine block
-
+//always write routes after template engine block
 require('./routes/web')(app)
+app.use((req, res)=>{
+    res.status(404).render('errors/404')
+
+})
 
 
 const server = app.listen(PORT, ()=>{

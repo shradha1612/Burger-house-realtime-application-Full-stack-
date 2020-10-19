@@ -56,4 +56,6 @@ create register page with routes
 Change order status
  create order single page with status
  order tracker
-    -dependencies
+    -dependencies socket.io
+Build project deployment
+Deploy this project

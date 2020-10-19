@@ -28,7 +28,6 @@ export function initAdmin(socket) {
         }).join('')
       }
 // // tailwind.css se custom select ka div copy kiya  svg wala
-
     function generateMarkup(orders) {
         return orders.map(order => {
             return `
