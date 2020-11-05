@@ -7,6 +7,8 @@ export function initAdmin(socket) {
     let orders = []
     let markup
 
+
+    
     axios.get('/admin/orders', {
         headers: {
             "X-Requested-With": "XMLHttpRequest"
