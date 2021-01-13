@@ -11,7 +11,7 @@ const flash= require('express-flash')
 const MongoDbStore = require('connect-mongo')(session)     //call  and pass session
 const passport = require('passport')
 const Emitter = require('events')
-
+const cors = require('cors')
 //Database connection
 // const url="mongodb+srv://dbshradha1612:4hlk84CJ0J37KTPW@cluster0.nut94.mongodb.net/Burger?retryWrites=true&w=majority"
 // mongoose.connect(url, {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify:true});
@@ -66,7 +66,11 @@ app.use((req, res, next)=>{
     res.locals.user = req.user
     next()
 })
-
+const corsOptions={
+    origin:process.env.ALLOWED_CLIENTS.split(',')
+    // 'http://localhost:3000','http://localhost:5000','localhost:3000'
+}
+app.use(cors(corsOptions))
 //set template engine
 app.use(expressLayout)
 app.set('views',path.join(__dirname,'/resources/views'))
