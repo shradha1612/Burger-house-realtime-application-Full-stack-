@@ -35,7 +35,7 @@ addToCart.forEach((btn)=>{
         //server ko req and add it to cart
 
       //  let burger=JSON.dataset.burger
-      //console.log(burger) //it gives data in json we need to convert in object again
+    //  console.log(burger) //it gives data in json we need to convert in object again
 
         let burger = JSON.parse(btn.dataset.burger)
         updateCart(burger)
