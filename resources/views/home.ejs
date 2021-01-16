@@ -1,38 +1,114 @@
 <section class="hero py-14 px-8">
-    <div class="container mx-auto flex items-center justify-between bg-black">
-        <div class="w-1/2 pl-12">
-            <h6 class="text-lg text-white"><em>Are you hungry?</em></h6>
-            <h1 class="text-3xl md:text-6xl font-bold text-white">Don't wait!!!</h1>
-            <button class="px-8 py-3 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
-       </div>
-        <div class="w-1/2 ">
-            <!-- <img src="/img/fire bacl.jpg"> -->
-            <img src="/img/food.jpg">
-        </div>
+  <div class="container mx-auto flex items-center justify-between bg-black">
+    <div class="w-1/2 pl-12">
+      <h6 class="text-lg text-white"><em>Are you hungry?</em></h6>
+      <h1 class="text-3xl md:text-6xl font-bold text-white">Don't wait!!!</h1>
+      <button
+        class="px-8 py-3 rounded-full text-white font-bold mt-4 btn-primary"
+      >
+        Order Now
+      </button>
     </div>
+    <div class="w-1/2 ">
+      <!-- <img src="/img/fire bacl.jpg"> -->
+      <img src="/img/food.jpg" />
+    </div>
+  </div>
 </section>
-<section class="menu container mx-auto py-8 px-8">
-   <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
-   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16">
-<% burgers.forEach(function(burger) { %>
-    <div class="w-full md:w-64">
-        <img class="h-40 mb-4 mx-auto" src="/img/<%= burger.image %>" alt="">
-        <div class="text-center">
+<div class="menu-container">
+  <section class="menu container mx-auto py-8 px-8">
+    <h1 class="text-xl font-bold mb-8 center">MENU</h1>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16"
+    >
+      <% burgers.forEach(function(burger) { %>
+      <div class="cardstyle">
+        <div class="w-full md:w-64 bg-white pt-3 pb-3 border-2 shadow-xl">
+          <img
+            class="h-40 mb-4 mx-auto"
+            src="/img/<%= burger.image %>"
+            alt=""
+          />
+          <div class="text-center">
             <h2 class="mb-4 text-lg font-bold"><%= burger.name %></h2>
-            <span class="size py-1 px-4 rounded-full uppercase font-bold text-xs"><%= burger.size %></span>
+            <span
+              class="size py-1 px-4 rounded-full uppercase font-bold text-xs"
+              ><%= burger.size %></span
+            >
             <div class="flex items-center justify-around mt-6">
-                <span class="font-extrabold text-2xl">Rs.<%= burger.price %></span>
-                <button data-burger="<%=JSON.stringify(burger) %>"
-                     class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                    <span>+</span>
-                    <span class="ml-4">Add</span>
-                </button>
+              <span class="font-extrabold text-2xl"
+                >Rs.<%= burger.price %></span
+              >
+              <button
+                data-burger="<%=JSON.stringify(burger) %>"
+                class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold"
+              >
+                <span>+</span>
+                <span class="ml-4">Add</span>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
+      <% })%>
     </div>
-<% })%>
-        
+  </section>
+</div>
+
+<section id="about">
+  <div class="title-text">
+    <h2 class="title-text">About Us</h2>
+  </div>
+  <div class="about-center">
+    <article class="about">
+      <div class="about-icon">
+        <i class="fas fa-mug-hot"></i>
+      </div>
+      <div class="about-text">
+        <h2 class="about-subtitle">Drinks</h2>
+        <p class="about-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          laboriosam voluptas unde, impedit numquam iure rem voluptates,
+          consectetur repellendus nobis eos enim minima dolorum, sit ipsam?
+          Vitae, laboriosam hic. Impedit.
+        </p>
+      </div>
+    </article>
+    <article class="about">
+      <div class="about-icon">
+        <i class="fas fa-hamburger"></i>
+      </div>
+      <div class="about-text">
+        <h2 class="about-subtitle">Healthy food</h2>
+        <p class="about-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          laboriosam voluptas unde, impedit numquam iure rem voluptates,
+          consectetur repellendus nobis eos enim minima dolorum, sit ipsam?
+          Vitae, laboriosam hic. Impedit.
+        </p>
+      </div>
+    </article>
+    <article class="about">
+      <div class="about-icon">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <div class="about-text">
+        <h2 class="about-subtitle">Organic food</h2>
+        <p class="about-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+          laboriosam voluptas unde, impedit numquam iure rem voluptates,
+          consectetur repellendus nobis eos enim minima dolorum, sit ipsam?
+          Vitae, laboriosam hic. Impedit.
+        </p>
+      </div>
+    </article>
+    
+  </div>
+</section>
 
 
-   </div>
+<section>
+  <div class="bg-black">
+<h3 class="text-center foot pt-3 pb-8">Made by Shradha Parkhi</h3>
+  </div>
 </section>
