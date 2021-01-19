@@ -186,6 +186,7 @@ color: $primary;
     font-size: 14px;
     margin-top: 8px;
 }
+
 @media(max-width:1060px) {
     .container {
         max-width: 90%;
@@ -249,7 +250,6 @@ color: $primary;
     transform: translateY(-10px);
     cursor: pointer;
     color: orange;
-
 }
 
 @media screen and (min-width: 570px){
@@ -267,7 +267,6 @@ color: $primary;
         flex: 0 0 calc(33.3% - 16px);
     }
 }
-
 .foot{
 color: white;
 }
