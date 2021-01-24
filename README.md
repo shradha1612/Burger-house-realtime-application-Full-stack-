@@ -1,2 +1,2 @@
 # Burger-house-realtime-application
-# Live - https://realtimeapp-burger-house.herokuapp.com/
+-Live - https://realtimeapp-burger-house.herokuapp.com/
